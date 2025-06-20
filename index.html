@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Applications</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #000000;
+            --card-bg: #f2f2f2;
+            --card-fg: #000000;
+            --group-title: #333333;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1e1e1e;
+                --fg: #ffffff;
+                --card-bg: #2c2c2c;
+                --card-fg: #ffffff;
+                --group-title: #cccccc;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 2rem;
+            font-family: sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .group {
+            margin-bottom: 2rem;
+        }
+
+        .group h2 {
+            color: var(--group-title);
+            margin-bottom: 1rem;
+        }
+
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .tile {
+            background: var(--card-bg);
+            color: var(--card-fg);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            transition: transform 0.1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tile:hover {
+            transform: translateY(-3px);
+        }
+
+        .tile img {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 0.5rem;
+
+            border-radius: 8px;
+        }
+
+        .tile-label {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Applications</h1>
+
+    <div class="group">
+        <h2>Boardgame Tools</h2>
+        <div class="tiles">
+            <!-- Text-only tile -->
+            <a href="/goa2-faq" class="tile">
+                <img src="./goa2-faq-512x512.png" alt="GoA2 - FAQ">
+                <div class="tile-label">Guards of Atlantis 2</div>
+            </a>
+            <a href="/hegemony-taxes" class="tile">
+                <img src="./hegemony-512x512.png" alt="Hegemony Tax Calculator">
+                <div class="tile-label">Hegemony</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="group">
+        <h2>Side Projects</h2>
+        <div class="tiles">
+            <a href="/hmarkdown-blog" class="tile">
+                <img src="recipes-icon.png" alt="Recipes Collection">
+                <div class="tile-label">Recipes</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
